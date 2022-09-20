@@ -22,13 +22,13 @@ public class AdminController {
 
 
     @GetMapping("/users")
-    public String showAllUsers(ModelMap model) {
+    public String showAllUsers(Model model) {
         model.addAttribute("users", userService.getAllUsers());
         return "admin/allUsers";
     }
 
     @GetMapping("/users/new")
-    public String newUser(Model model) {
+    public String newUser(@ModelAttribute("user") User user, Model model) {
         model.addAttribute("users", userService.getAllUsers());
         model.addAttribute("roles", roleService.getAllRoles());
         return "admin/newUser";
