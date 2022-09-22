@@ -24,6 +24,16 @@
         <input type="password" name="password" class="form-control" placeholder="Password" required>
         <h1></h1>
         <button type="submit" class="btn btn-lg btn-primary btn-block form-control">Sign in</button>
+
+        <div th:if="${param.error}" style="color: red">
+          Неправильные логин или пароль
+          <br>
+          Подсказка для отладки:
+          <br>
+          user@mail.ru - user
+          <br>
+          admin@mail.ru - admin
+        </div>
       </form>
     </div>
   </div>
